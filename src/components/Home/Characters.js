@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import LayoutBody from "../LayoutBody";
 import { Card, CardContent, Typography, CardMedia, Grid } from "@material-ui/core";
 import Axios from "axios";
-import { public_key } from "../Api";
+import { public_key, ts, hash, api_url } from "../Api";
 import { Link } from "react-router-dom";
 
 const styles = theme => ({
@@ -62,7 +62,7 @@ class Characters extends Component{
     }
 
     search = () => {
-        Axios.get(`http://gateway.marvel.com/v1/public/characters?orderBy=-modified&limit=5&apikey=${public_key}`)
+        Axios.get(`${api_url}/characters?orderBy=-modified&limit=5&apikey=${public_key}&ts=${ts}&hash=${hash}`)
         .then(res => {
             this.setState({
                 comics: res.data.data.results,

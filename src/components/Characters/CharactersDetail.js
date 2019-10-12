@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Grid, withStyles, Button } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import Axios from 'axios';
-import { public_key, api_url } from '../Api';
+import { public_key, api_url, ts, hash } from '../Api';
 import LayoutBody from '../LayoutBody';
 import CommonStyles from '../CommonStyles'
 import CharactersComics from './CharactersComics';
@@ -42,7 +42,7 @@ class CharactersDetail extends Component {
     componentDidMount(){
         window.scrollTo(0,0)
 
-        Axios.get(`${api_url}/characters/${this.props.match.params.id}?apikey=${public_key}`)
+        Axios.get(`${api_url}/characters/${this.props.match.params.id}?apikey=${public_key}&ts=${ts}&hash=${hash}`)
         .then(res => {
             this.setState({character: res.data.data.results,
                             total: res.data.data.total})

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { TextField, Button, Grid, MuiThemeProvider, Typography } from '@material-ui/core';
 import Axios from 'axios';
-import { public_key, api_url } from '../Api'
+import { public_key, api_url, ts, hash } from '../Api'
 import CharactersResult from './CharactersResult';
 import Pagination from "material-ui-flat-pagination";
 import CommonStyles from '../CommonStyles';
@@ -44,7 +44,7 @@ class Search extends Component {
         const search = this.state.search
         const offset = this.state.offset
 
-        Axios.get(`${api_url}/characters?apikey=${public_key}&nameStartsWith=${search}&offset=${offset}`)
+        Axios.get(`${api_url}/characters?apikey=${public_key}&ts=${ts}&hash=${hash}&nameStartsWith=${search}&offset=${offset}`)
         .then(res => {
             this.setState({
                 characters: res.data.data.results,

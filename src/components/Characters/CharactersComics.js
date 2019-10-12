@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import { Card, CardContent, Typography, CardMedia, Grid, MuiThemeProvider } from "@material-ui/core";
 import Axios from "axios";
-import { public_key, api_url } from "../Api";
+import { public_key, api_url, ts, hash } from "../Api";
 import Pagination from "material-ui-flat-pagination";
 import {theme} from '../CommonStyles';
 import CharactersComicsModal from "./CharactersComicsModal";
@@ -67,7 +67,7 @@ class CharactersComics extends Component{
 
     search = () => {
 
-        Axios.get(`${api_url}/characters/${this.props.characterId}/comics?apikey=${public_key}&limit=4&offset=${this.state.offset}`)
+        Axios.get(`${api_url}/characters/${this.props.characterId}/comics?apikey=${public_key}&ts=${ts}&hash=${hash}&limit=4&offset=${this.state.offset}`)
         .then(res => {
             this.setState({comics: res.data.data.results,
                             total: res.data.data.total})

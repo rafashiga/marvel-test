@@ -1,3 +1,5 @@
-export const public_key = "791170720512f7a4e25b43da72839270"
+export const public_key = "fa837861e0b30f0dabeea297ff5a1248"
 export const private_key = ""
-export const api_url = "http://gateway.marvel.com/v1/public"
+export const ts = "shiga"
+export const hash = "be35ab768acbcca85b0c1426e260983c"
+export const api_url = "https://gateway.marvel.com/v1/public"

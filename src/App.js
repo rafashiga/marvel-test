@@ -10,6 +10,11 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { createBrowserHistory } from 'history'
+
+export const history = createBrowserHistory({
+    basename: process.env.PUBLIC_URL
+});
 
 library.add(fab, faInstagram)
 
@@ -17,13 +22,13 @@ class App extends Component {
   render() {
 	 return (
 		<div className="App">
-			<BrowserRouter>
+			<BrowserRouter history={history} basename={'marvel'}>
 				<div>
 					<Navbar/>
 					<Switch>
 						<Route path="/" exact component={Home} />
-						<Route path="/characters" component={Characters} />
-						<Route name="characterDetail" path="/characterDetail/:id" component={CharactersDetail} />
+						<Route path="/characters" component={Characters}/>
+						<Route name="characterDetail" path="/characterDetail/:id" component={CharactersDetail}/>
 					</Switch>
 					<Footer />
 				</div>
@@ -34,3 +39,4 @@ class App extends Component {
 }
 
 export default App;
+
