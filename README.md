@@ -39,3 +39,19 @@
 - [Axios](https://github.com/axios/axios)
 
 ## :information_source: How to use
+
+To run this project you'll need [GIT](https://git-scm.com/), [NodeJS](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/) installed on your computer.
+
+```bash
+# Clone this repository
+$ git clone https://github.com/rafashiga/marvel-test.git
+
+# Go into the repository
+$ cd marvel-test
+
+# Install dependencies
+$ yarn install
+
+# Run the project
+$ yarn start
+```
