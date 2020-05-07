@@ -18,6 +18,8 @@
   <br>
   <br>
   <a href="#space_invader-technologies">Technologies</a>
+  |
+  <a href="#information_source-how-to-use">How to use</a>
   <br>
   <br>
   <img src="./src/assets/website.jpg">
@@ -35,3 +37,5 @@
 - [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
 - [react-fontawesome](https://github.com/FortAwesome/react-fontawesome)
 - [Axios](https://github.com/axios/axios)
+
+## :information_source: How to use
